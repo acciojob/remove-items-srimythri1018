@@ -20,6 +20,26 @@
 		</form>
 
 		<script type="text/javascript" src="./script.js">
+			// Get the necessary elements
+const colorSelect = document.getElementById('colorSelect');
+const removeButton = document.querySelector('input[type="button"]');
+
+// Function to remove selected color
+function removeColor() {
+  const selectedColor = colorSelect.value;
+  const options = colorSelect.options;
+
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].text === selectedColor) {
+      colorSelect.remove(i);
+      break;
+    }
+  }
+}
+
+// Event listener for button click
+removeButton.addEventListener('click', removeColor);
+
 		</script>
 
 	</body>
